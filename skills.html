@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills & Technologies - Streaming Edition</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/streaming-theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="streaming-theme">
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">DevOps<span>Portfolio</span></div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="experience.html">Experience</a></li>
+                    <li><a href="skills.html" class="active">Skills</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="skills-hero">
+        <div class="container">
+            <div class="skills-hero-content">
+                <h1>Skills & Technologies</h1>
+                <p>My technical expertise and proficiency in DevOps and Cloud technologies</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills-categories">
+        <div class="container">
+            <div class="category-tabs">
+                <button class="category-tab active" data-category="all">All Skills</button>
+                <button class="category-tab" data-category="devops">DevOps</button>
+                <button class="category-tab" data-category="cloud">Cloud</button>
+                <button class="category-tab" data-category="automation">Automation</button>
+                <button class="category-tab" data-category="containers">Containers</button>
+                <button class="category-tab" data-category="monitoring">Monitoring</button>
+                <button class="category-tab" data-category="cicd">CI/CD</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills-section">
+        <div class="container">
+            <h2 class="section-title">Top Picks For You</h2>
+            
+            <div class="content-row">
+                <!-- DevOps Skill Card -->
+                <div class="content-card" data-categories="devops,automation">
+                    <div class="content-image">
+                        <img src="images/project1.svg" alt="Infrastructure as Code">
+                        <div class="skill-level expert">Expert</div>
+                    </div>
+                    <div class="content-details">
+                        <h3 class="content-title">Infrastructure as Code</h3>
+                        <div class="content-meta">
+                            <span><i class="fas fa-tag"></i> DevOps</span>
+                            <span><i class="fas fa-star"></i> 5 years</span>
+                        </div>
+                        <p class="content-description">Terraform, AWS CloudFormation, Ansible, Pulumi</p>
+                        <div class="content-action">
+                            <a href="#" class="watch-btn"><i class="fas fa-info-circle"></i> Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cloud Skill Card -->
+                <div class="content-card" data-categories="cloud">
+                    <div class="content-image">
+                        <img src="images/project2.svg" alt="Cloud Platforms">
+                        <div class="skill-level expert">Expert</div>
+                    </div>
+                    <div class="content-details">
+                        <h3 class="content-title">Cloud Platforms</h3>
+                        <div class="content-meta">
+                            <span><i class="fas fa-tag"></i> Cloud</span>
+                            <span><i class="fas fa-star"></i> 6 years</span>
+                        </div>
+                        <p class="content-description">AWS, Azure, Google Cloud Platform, Multi-cloud strategies</p>
+                        <div class="content-action">
+                            <a href="#" class="watch-btn"><i class="fas fa-info-circle"></i> Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Containers Skill Card -->
+                <div class="content-card" data-categories="containers,devops">
+                    <div class="content-image">
+                        <img src="images/project3.svg" alt="Containerization">
+                        <div class="skill-level expert">Expert</div>
+                    </div>
+                    <div class="content-details">
+                        <h3 class="content-title">Containerization & Orchestration</h3>
+                        <div class="content-meta">
+                            <span><i class="fas fa-tag"></i> Containers</span>
+                            <span><i class="fas fa-star"></i> 4 years</span>
+                        </div>
+                        <p class="content-description">Docker, Kubernetes, Helm, Docker Compose, Podman</p>
+                        <div class="content-action">
+                            <a href="#" class="watch-btn"><i class="fas fa-info-circle"></i> Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 class="section-title">More Skills You'll Like</h2>
+            
+            <div class="content-row">
+                <!-- CI/CD Skill Card -->
+                <div class="content-card" data-categories="cicd,devops">
+                    <div class="content-image">
+                        <img src="images/project1.svg" alt="CI/CD">
+                        <div class="skill-level advanced">Advanced</div>
+                    </div>
+                    <div class="content-details">
+                        <h3 class="content-title">CI/CD</h3>
+                        <div class="content-meta">
+                            <span><i class="fas fa-tag"></i> CI/CD</span>
+                            <span><i class="fas fa-star"></i> 5 years</span>
+                        </div>
+                        <p class="content-description">Jenkins, GitHub Actions, GitLab CI, CircleCI, ArgoCD</p>
+                        <div class="content-action">
+                            <a href="#" class="watch-btn"><i class="fas fa-info-circle"></i> Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Monitoring Skill Card -->
+                <div class="content-card" data-categories="monitoring,devops">
+                    <div class="content-image">
+                        <img src="images/project2.svg" alt="Monitoring">
+                        <div class="skill-level advanced">Advanced</div>
+                    </div>
+                    <div class="content-details">
+                        <h3 class="content-title">Monitoring & Logging</h3>
+                        <div class="content-meta">
+                            <span><i class="fas fa-tag"></i> Monitoring</span>
+                            <span><i class="fas fa-star"></i> 4 years</span>
+                        </div>
+                        <p class="content-description">Prometheus, Grafana, ELK Stack, Datadog, New Relic</p>
+                        <div class="content-action">
+                            <a href="#" class="watch-btn"><i class="fas fa-info-circle"></i> Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Automation Skill Card -->
+                <div class="content-card" data-categories="automation,devops">
+                    <div class="content-image">
+                        <img src="images/project3.svg" alt="Automation">
+                        <div class="skill-level advanced">Advanced</div>
+                    </div>
+                    <div class="content-details">
+                        <h3 class="content-title">Automation & Scripting</h3>
+                        <div class="content-meta">
+                            <span><i class="fas fa-tag"></i> Automation</span>
+                            <span><i class="fas fa-star"></i> 5 years</span>
+                        </div>
+                        <p class="content-description">Python, Bash, PowerShell, Go, JavaScript</p>
+                        <div class="content-action">
+                            <a href="#" class="watch-btn"><i class="fas fa-info-circle"></i> Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 class="section-title">Certifications</h2>
+            
+            <div class="content-row">
+                <!-- AWS Certification -->
+                <div class="content-card" data-categories="cloud,certification">
+                    <div class="content-image">
+                        <img src="images/project1.svg" alt="AWS Certification">
+                        <div class="certification-badge">Certified</div>
+                    </div>
+                    <div class="content-details">
+                        <h3 class="content-title">AWS Certified DevOps Engineer - Professional</h3>
+                        <div class="content-meta">
+                            <span><i class="fas fa-calendar"></i> 2023</span>
+                            <span><i class="fas fa-award"></i> Amazon Web Services</span>
+                        </div>
+                        <p class="content-description">Expertise in implementing and managing continuous delivery systems and methodologies on AWS.</p>
+                        <div class="content-action">
+                            <a href="#" class="watch-btn"><i class="fas fa-certificate"></i> View Certificate</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Kubernetes Certification -->
+                <div class="content-card" data-categories="containers,certification">
+                    <div class="content-image">
+                        <img src="images/project2.svg" alt="Kubernetes Certification">
+                        <div class="certification-badge">Certified</div>
+                    </div>
+                    <div class="content-details">
+                        <h3 class="content-title">Certified Kubernetes Administrator (CKA)</h3>
+                        <div class="content-meta">
+                            <span><i class="fas fa-calendar"></i> 2022</span>
+                            <span><i class="fas fa-award"></i> Cloud Native Computing Foundation</span>
+                        </div>
+                        <p class="content-description">Demonstrated proficiency in managing Kubernetes clusters and containerized applications.</p>
+                        <div class="content-action">
+                            <a href="#" class="watch-btn"><i class="fas fa-certificate"></i> View Certificate</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Azure Certification -->
+                <div class="content-card" data-categories="cloud,certification">
+                    <div class="content-image">
+                        <img src="images/project3.svg" alt="Azure Certification">
+                        <div class="certification-badge">Certified</div>
+                    </div>
+                    <div class="content-details">
+                        <h3 class="content-title">Microsoft Certified: Azure DevOps Engineer Expert</h3>
+                        <div class="content-meta">
+                            <span><i class="fas fa-calendar"></i> 2022</span>
+                            <span><i class="fas fa-award"></i> Microsoft</span>
+                        </div>
+                        <p class="content-description">Expertise in designing and implementing DevOps practices for Azure and hybrid environments.</p>
+                        <div class="content-action">
+                            <a href="#" class="watch-btn"><i class="fas fa-certificate"></i> View Certificate</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Sozhan Natarajan. All Rights Reserved.</p>
+                <div class="social-links">
+                    <a href="https://github.com/sozhan308" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/sozhan-natarajan" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://twitter.com/sozhan308" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Category filtering
+        const categoryTabs = document.querySelectorAll('.category-tab');
+        const contentCards = document.querySelectorAll('.content-card');
+        
+        categoryTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all tabs
+                categoryTabs.forEach(t => t.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                this.classList.add('active');
+                
+                const category = this.getAttribute('data-category');
+                
+                // Show/hide content cards based on category
+                contentCards.forEach(card => {
+                    if (category === 'all') {
+                        card.style.display = 'block';
+                    } else {
+                        const cardCategories = card.getAttribute('data-categories').split(',');
+                        if (cardCategories.includes(category)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+        
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    });
+    </script>
+    <style>
+        /* Skills Page Specific Styles */
+        .skills-hero {
+            background-color: var(--bg-dark);
+            background-image: linear-gradient(to bottom, rgba(15, 23, 30, 0.7), rgba(15, 23, 30, 0.9)), url('../images/hero-bg.svg');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0 80px;
+            text-align: center;
+            margin-bottom: 0;
+        }
+        
+        .skills-hero-content h1 {
+            color: var(--text-white);
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .skills-hero-content p {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .skills-categories {
+            background-color: var(--secondary-color);
+            padding: 20px 0;
+            margin-bottom: 0;
+        }
+        
+        .skills-section {
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            padding: 50px 0;
+        }
+        
+        .skills-section .section-title {
+            color: var(--text-white);
+            margin-top: 40px;
+        }
+        
+        .skills-section .section-title:first-of-type {
+            margin-top: 0;
+        }
+        
+        .skill-level {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-white);
+        }
+        
+        .skill-level.expert {
+            background-color: #e50914; /* Netflix red */
+        }
+        
+        .skill-level.advanced {
+            background-color: #f5a623; /* Orange */
+        }
+        
+        .skill-level.intermediate {
+            background-color: #4CAF50; /* Green */
+        }
+        
+        .certification-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-white);
+            background-color: var(--accent-color);
+        }
+    </style>
+</body>
+</html>

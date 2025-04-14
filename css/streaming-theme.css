@@ -1,17 +1,17 @@
 /* Streaming Service Theme - Prime Video Inspired */
 :root {
-    --primary-color: #00a8e1; /* Prime Video blue */
-    --secondary-color: #232f3e; /* Amazon dark blue */
-    --accent-color: #ff9900; /* Amazon orange */
+    --primary-color: #00A8E1; /* Prime Video blue */
+    --secondary-color: #0F171E; /* Prime Video dark background */
+    --accent-color: #00A8E1; /* Prime Video blue accent */
     --text-color: #111111;
-    --text-light: #555555;
+    --text-light: #8197A4; /* Prime Video light text */
     --text-white: #ffffff;
-    --bg-dark: #0f171e; /* Prime Video dark background */
-    --bg-darker: #1a242f; /* Slightly lighter than bg-dark for cards */
+    --bg-dark: #0F171E; /* Prime Video dark background */
+    --bg-darker: #1A242F; /* Prime Video card background */
     --bg-light: #f8f9fa;
-    --card-hover: #1f2c3a; /* Slightly lighter for hover effects */
-    --border-color: #303a45;
-    --shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    --card-hover: #252E39; /* Slightly lighter for hover effects */
+    --border-color: #1A242F;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     --transition: all 0.3s ease;
 }
 
@@ -25,12 +25,14 @@ body.streaming-theme {
 /* Header Styling */
 body.streaming-theme header {
     background-color: var(--secondary-color);
+    background-image: linear-gradient(to bottom, rgba(15, 23, 30, 0.9) 10%, rgba(15, 23, 30, 0.7) 50%, transparent);
     padding: 15px 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: none;
+    transition: background-color 0.3s ease;
 }
 
 body.streaming-theme .logo {
@@ -60,8 +62,11 @@ body.streaming-theme .hero {
     background-image: linear-gradient(to bottom, rgba(15, 23, 30, 0.7), rgba(15, 23, 30, 0.9)), url('../images/hero-bg.svg');
     background-size: cover;
     background-position: center;
-    padding: 150px 0 80px;
+    padding: 180px 0 100px;
     margin-bottom: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 body.streaming-theme .hero-content h1 {
@@ -93,6 +98,8 @@ body.streaming-theme .btn.primary-btn {
     border-radius: 4px;
     font-weight: 600;
     transition: var(--transition);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
 body.streaming-theme .btn.secondary-btn {
@@ -106,7 +113,7 @@ body.streaming-theme .btn.secondary-btn {
 }
 
 body.streaming-theme .btn.primary-btn:hover {
-    background-color: #0090c0; /* Darker shade of primary */
+    background-color: #0076A8; /* Darker shade of Prime Video blue */
     transform: translateY(-2px);
 }
 
@@ -121,32 +128,29 @@ body.streaming-theme section {
 }
 
 body.streaming-theme .section-title {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     color: var(--text-white);
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     position: relative;
     display: inline-block;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 body.streaming-theme .section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 60px;
-    height: 4px;
-    background-color: var(--primary-color);
+    content: none;
 }
 
-/* Content Cards - Prime Video Style */
+/* Content Cards - Netflix Style */
 body.streaming-theme .content-row {
     display: flex;
     overflow-x: auto;
-    gap: 20px;
-    padding: 10px 0 30px;
+    gap: 10px;
+    padding: 20px 0 30px;
     margin-bottom: 40px;
     scrollbar-width: thin;
     scrollbar-color: var(--primary-color) var(--bg-darker);
+    position: relative;
 }
 
 body.streaming-theme .content-row::-webkit-scrollbar {
@@ -164,24 +168,26 @@ body.streaming-theme .content-row::-webkit-scrollbar-thumb {
 }
 
 body.streaming-theme .content-card {
-    flex: 0 0 300px;
+    flex: 0 0 250px;
     background-color: var(--bg-darker);
-    border-radius: 6px;
+    border-radius: 4px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     box-shadow: var(--shadow);
+    margin-bottom: 10px;
 }
 
 body.streaming-theme .content-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
     background-color: var(--card-hover);
-    z-index: 1;
+    z-index: 10;
+    cursor: pointer;
 }
 
 body.streaming-theme .content-image {
-    height: 180px;
+    height: 150px;
     overflow: hidden;
     position: relative;
 }
@@ -198,30 +204,42 @@ body.streaming-theme .content-card:hover .content-image img {
 }
 
 body.streaming-theme .content-details {
-    padding: 15px;
+    padding: 12px;
 }
 
 body.streaming-theme .content-title {
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 1.1rem;
     margin-bottom: 8px;
     color: var(--text-white);
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 body.streaming-theme .content-meta {
     display: flex;
+    gap: 12px;
+    margin-bottom: 8px;
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+body.streaming-theme .content-meta span {
+    display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-    font-size: 0.85rem;
-    color: #aaa;
+    gap: 4px;
 }
 
 body.streaming-theme .content-description {
-    font-size: 0.9rem;
-    color: #ccc;
-    margin-bottom: 15px;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 12px;
     line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 body.streaming-theme .content-action {
@@ -235,7 +253,7 @@ body.streaming-theme .watch-btn {
     color: var(--text-white);
     border: none;
     padding: 8px 15px;
-    border-radius: 4px;
+    border-radius: 2px;
     font-weight: 500;
     font-size: 0.9rem;
     display: flex;
@@ -245,7 +263,7 @@ body.streaming-theme .watch-btn {
 }
 
 body.streaming-theme .watch-btn:hover {
-    background-color: #0090c0;
+    background-color: #0076A8;
 }
 
 body.streaming-theme .content-rating {
@@ -275,10 +293,10 @@ body.streaming-theme .blog-categories {
 
 body.streaming-theme .category-tab {
     background: transparent;
-    border: 2px solid var(--primary-color);
+    border: 1px solid var(--primary-color);
     color: var(--text-white);
     padding: 8px 16px;
-    border-radius: 30px;
+    border-radius: 2px;
     font-weight: 500;
     cursor: pointer;
     transition: var(--transition);

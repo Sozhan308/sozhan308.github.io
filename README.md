@@ -1,4 +1,4 @@
-# Streaming Service-Inspired Portfolio
+# My Portfolio - Streaming Service-Inspired 
 
 This is a modern portfolio website inspired by streaming services like Prime Video, designed for DevOps engineers and cloud professionals. The design features a dark theme, content cards, and horizontal scrolling sections similar to popular streaming platforms.
 
@@ -29,7 +29,7 @@ This is a modern portfolio website inspired by streaming services like Prime Vid
 
 ## How to Use
 
-1. Open `index-streaming.html` in your browser to view the streaming-inspired portfolio
+1. Open `index.html` in your browser to view the streaming-inspired portfolio
 2. Navigate to the blog section by clicking "Blog" in the navigation menu
 3. Use the category tabs to filter blog posts by platform or topic
 4. Click on any project or article card to view more details
@@ -47,8 +47,8 @@ To customize this portfolio for your own use:
 
 ## Files
 
-- `index-streaming.html`: Main portfolio page
-- `blog-streaming.html`: Blog articles page
+- `index.html`: Main portfolio page
+- `blog.html`: Blog articles page
 - `css/streaming-theme.css`: Streaming service-inspired styles
 - `js/streaming-theme.js`: JavaScript for interactive features
 
