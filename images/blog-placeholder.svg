@@ -1,0 +1,15 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="400" fill="#f0f0f0"/>
+  <rect x="50" y="50" width="700" height="300" rx="10" fill="#0e76a8" opacity="0.8"/>
+  <text x="400" y="200" font-family="Arial" font-size="40" fill="white" text-anchor="middle" dominant-baseline="middle">DevOps Blog</text>
+  <text x="400" y="250" font-family="Arial" font-size="20" fill="white" text-anchor="middle" dominant-baseline="middle">Cloud & Infrastructure Insights</text>
+  <g fill="white" opacity="0.3">
+    <circle cx="150" cy="150" r="50"/>
+    <circle cx="650" cy="150" r="70"/>
+    <circle cx="400" cy="300" r="40"/>
+  </g>
+  <g fill="none" stroke="white" stroke-width="3" opacity="0.5">
+    <path d="M100,300 Q400,100 700,300"/>
+    <path d="M200,100 Q400,300 600,100"/>
+  </g>
+</svg>

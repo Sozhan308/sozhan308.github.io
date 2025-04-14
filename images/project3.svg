@@ -1,0 +1,84 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="600" height="400" fill="#f0f5f9" />
+  
+  <!-- Monitoring Dashboard Visualization -->
+  <g transform="translate(50, 50)">
+    <!-- Dashboard frame -->
+    <rect x="0" y="0" width="500" height="280" rx="10" fill="#24292e" />
+    
+    <!-- Dashboard header -->
+    <rect x="0" y="0" width="500" height="40" rx="10" fill="#30363d" />
+    <text x="20" y="25" font-family="Arial" font-size="16" fill="#ffffff">Infrastructure Monitoring Dashboard</text>
+    
+    <!-- Prometheus and Grafana logos -->
+    <g transform="translate(400, 10) scale(0.2)">
+      <!-- Prometheus logo (simplified) -->
+      <path d="M50,0 L100,25 L100,75 L50,100 L0,75 L0,25 Z" fill="#e6522c" />
+      <path d="M50,20 L80,35 L80,65 L50,80 L20,65 L20,35 Z" fill="#24292e" />
+    </g>
+    
+    <g transform="translate(450, 10) scale(0.2)">
+      <!-- Grafana logo (simplified) -->
+      <rect x="0" y="0" width="100" height="100" rx="20" fill="#f46800" />
+      <path d="M20,50 C20,30 40,20 60,30 C80,40 90,70 60,80 C30,90 20,70 20,50 Z" fill="#24292e" />
+    </g>
+    
+    <!-- Dashboard panels -->
+    <g>
+      <!-- CPU Usage Panel -->
+      <rect x="20" y="60" width="220" height="100" rx="5" fill="#30363d" />
+      <text x="30" y="80" font-family="Arial" font-size="14" fill="#ffffff">CPU Usage</text>
+      
+      <!-- CPU Graph -->
+      <polyline points="30,140 50,120 70,130 90,100 110,110 130,90 150,105 170,85 190,95 210,80" 
+                stroke="#f46800" stroke-width="2" fill="none" />
+      <line x1="30" y1="140" x2="210" y2="140" stroke="#666" stroke-width="1" />
+      <line x1="30" y1="80" x2="30" y2="140" stroke="#666" stroke-width="1" />
+    </g>
+    
+    <g>
+      <!-- Memory Usage Panel -->
+      <rect x="260" y="60" width="220" height="100" rx="5" fill="#30363d" />
+      <text x="270" y="80" font-family="Arial" font-size="14" fill="#ffffff">Memory Usage</text>
+      
+      <!-- Memory Graph -->
+      <polyline points="270,140 290,135 310,130 330,125 350,120 370,115 390,110 410,105 430,100 450,95" 
+                stroke="#1f78c1" stroke-width="2" fill="none" />
+      <line x1="270" y1="140" x2="450" y2="140" stroke="#666" stroke-width="1" />
+      <line x1="270" y1="80" x2="270" y2="140" stroke="#666" stroke-width="1" />
+    </g>
+    
+    <g>
+      <!-- Disk I/O Panel -->
+      <rect x="20" y="180" width="220" height="80" rx="5" fill="#30363d" />
+      <text x="30" y="200" font-family="Arial" font-size="14" fill="#ffffff">Disk I/O</text>
+      
+      <!-- Disk I/O Bars -->
+      <rect x="50" y="210" width="20" height="40" fill="#2ea44f" />
+      <rect x="80" y="220" width="20" height="30" fill="#2ea44f" />
+      <rect x="110" y="215" width="20" height="35" fill="#2ea44f" />
+      <rect x="140" y="225" width="20" height="25" fill="#2ea44f" />
+      <rect x="170" y="205" width="20" height="45" fill="#2ea44f" />
+    </g>
+    
+    <g>
+      <!-- Network Traffic Panel -->
+      <rect x="260" y="180" width="220" height="80" rx="5" fill="#30363d" />
+      <text x="270" y="200" font-family="Arial" font-size="14" fill="#ffffff">Network Traffic</text>
+      
+      <!-- Network Traffic Lines -->
+      <polyline points="270,240 290,230 310,235 330,220 350,225 370,215 390,225 410,210 430,220 450,205" 
+                stroke="#e6522c" stroke-width="2" fill="none" />
+      <polyline points="270,240 290,245 310,235 330,250 350,240 370,255 390,245 410,260 430,250 450,265" 
+                stroke="#1f78c1" stroke-width="2" fill="none" />
+    </g>
+    
+    <!-- Alert icons -->
+    <circle cx="480" cy="70" r="8" fill="#2ea44f" />
+    <circle cx="480" cy="190" r="8" fill="#e6522c" />
+  </g>
+  
+  <!-- Title -->
+  <text x="300" y="350" font-family="Arial" font-size="24" text-anchor="middle" fill="#333333">Infrastructure Monitoring Solution</text>
+</svg>

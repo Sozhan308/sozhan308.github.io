@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Blog - Streaming Edition</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/streaming-theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="streaming-theme">
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">DevOps<span>Portfolio</span></div>
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#skills">Skills</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="blog-hero">
+        <div class="container">
+            <div class="blog-hero-content">
+                <h1>DevOps & Cloud Articles</h1>
+                <p>My published insights and tutorials on external platforms like Medium and Hashnode</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-categories">
+        <div class="container">
+            <div class="category-tabs">
+                <button class="category-tab active" data-category="all">All Posts</button>
+                <button class="category-tab" data-category="external">External Platforms</button>
+                <button class="category-tab" data-category="medium">Medium</button>
+                <button class="category-tab" data-category="hashnode">Hashnode</button>
+                <button class="category-tab" data-category="devops">DevOps</button>
+                <button class="category-tab" data-category="cloud">Cloud</button>
+                <button class="category-tab" data-category="kubernetes">Kubernetes</button>
+                <button class="category-tab" data-category="cicd">CI/CD</button>
+                <button class="category-tab" data-category="automation">Automation</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-posts">
+        <div class="container">
+            <h2 class="section-title">My Published Articles</h2>
+            
+            <div class="content-row">
+                <!-- External Blog Post - Hashnode -->
+                <div class="content-card" data-categories="devops,kubernetes,external,hashnode">
+                    <div class="content-image">
+                        <img src="images/blog-placeholder.svg" alt="Kubernetes Article">
+                        <div class="platform-badge hashnode">Hashnode</div>
+                    </div>
+                    <div class="content-details">
+                        <h3 class="content-title">Advanced Kubernetes Deployment Strategies</h3>
+                        <div class="content-meta">
+                            <span><i class="fas fa-calendar"></i> Jul 20, 2023</span>
+                            <span><i class="fas fa-tag"></i> Kubernetes</span>
+                        </div>
+                        <p class="content-description">Exploring blue-green, canary, and rolling deployment strategies in Kubernetes environments.</p>
+                        <div class="content-action">
+                            <a href="https://hashnode.com/yourusername/advanced-kubernetes" target="_blank" class="watch-btn"><i class="fas fa-external-link-alt"></i> Read Article</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- External Blog Post - Medium -->
+                <div class="content-card" data-categories="cloud,aws,external,medium">
+                    <div class="content-image">
+                        <img src="images/blog-placeholder.svg" alt="AWS Article">
+                        <div class="platform-badge medium">Medium</div>
+                    </div>
+                    <div class="content-details">
+                        <h3 class="content-title">Serverless Architecture on AWS</h3>
+                        <div class="content-meta">
+                            <span><i class="fas fa-calendar"></i> Jul 12, 2023</span>
+                            <span><i class="fas fa-tag"></i> Cloud</span>
+                        </div>
+                        <p class="content-description">Building scalable and cost-effective applications using AWS Lambda, API Gateway, and DynamoDB.</p>
+                        <div class="content-action">
+                            <a href="https://medium.com/@yourusername/serverless-architecture-aws" target="_blank" class="watch-btn"><i class="fas fa-external-link-alt"></i> Read Article</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- External Blog Post - Medium -->
+                <div class="content-card" data-categories="cicd,automation,external,medium">
+                    <div class="content-image">
+                        <img src="images/blog-placeholder.svg" alt="CI/CD Article">
+                        <div class="platform-badge medium">Medium</div>
+                    </div>
+                    <div class="content-details">
+                        <h3 class="content-title">Building Efficient CI/CD Pipelines with GitHub Actions</h3>
+                        <div class="content-meta">
+                            <span><i class="fas fa-calendar"></i> Jun 05, 2023</span>
+                            <span><i class="fas fa-tag"></i> CI/CD</span>
+                        </div>
+                        <p class="content-description">How to design and implement CI/CD pipelines that accelerate your development workflow using GitHub's native CI/CD solution.</p>
+                        <div class="content-action">
+                            <a href="https://medium.com/@yourusername/github-actions-cicd" target="_blank" class="watch-btn"><i class="fas fa-external-link-alt"></i> Read Article</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-row">
+                <!-- External Blog Post - Hashnode -->
+                <div class="content-card" data-categories="devops,automation,external,hashnode">
+                    <div class="content-image">
+                        <img src="images/blog-placeholder.svg" alt="Terraform Article">
+                        <div class="platform-badge hashnode">Hashnode</div>
+                    </div>
+                    <div class="content-details">
+                        <h3 class="content-title">Infrastructure as Code with Terraform</h3>
+                        <div class="content-meta">
+                            <span><i class="fas fa-calendar"></i> May 15, 2023</span>
+                            <span><i class="fas fa-tag"></i> DevOps</span>
+                        </div>
+                        <p class="content-description">Learn the fundamentals of Infrastructure as Code and how Terraform can revolutionize your cloud deployment process.</p>
+                        <div class="content-action">
+                            <a href="https://hashnode.com/yourusername/terraform-iac" target="_blank" class="watch-btn"><i class="fas fa-external-link-alt"></i> Read Article</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Additional Blog Posts can be added here -->
+                <div class="content-card" data-categories="devops,cloud,external,medium">
+                    <div class="content-image">
+                        <img src="images/blog-placeholder.svg" alt="Cloud Migration Article">
+                        <div class="platform-badge medium">Medium</div>
+                    </div>
+                    <div class="content-details">
+                        <h3 class="content-title">Cloud Migration Strategies for Enterprise Applications</h3>
+                        <div class="content-meta">
+                            <span><i class="fas fa-calendar"></i> Apr 10, 2023</span>
+                            <span><i class="fas fa-tag"></i> Cloud</span>
+                        </div>
+                        <p class="content-description">A comprehensive guide to migrating enterprise applications to the cloud with minimal disruption.</p>
+                        <div class="content-action">
+                            <a href="https://medium.com/@yourusername/cloud-migration" target="_blank" class="watch-btn"><i class="fas fa-external-link-alt"></i> Read Article</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="content-card" data-categories="kubernetes,devops,external,hashnode">
+                    <div class="content-image">
+                        <img src="images/blog-placeholder.svg" alt="Kubernetes Security Article">
+                        <div class="platform-badge hashnode">Hashnode</div>
+                    </div>
+                    <div class="content-details">
+                        <h3 class="content-title">Kubernetes Security Best Practices</h3>
+                        <div class="content-meta">
+                            <span><i class="fas fa-calendar"></i> Mar 22, 2023</span>
+                            <span><i class="fas fa-tag"></i> Kubernetes</span>
+                        </div>
+                        <p class="content-description">Essential security practices to protect your Kubernetes clusters from common vulnerabilities and threats.</p>
+                        <div class="content-action">
+                            <a href="https://hashnode.com/yourusername/kubernetes-security" target="_blank" class="watch-btn"><i class="fas fa-external-link-alt"></i> Read Article</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pagination">
+                <a href="#" class="page-link active">1</a>
+                <a href="#" class="page-link">2</a>
+                <a href="#" class="page-link">3</a>
+                <a href="#" class="page-link next"><i class="fas fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2023 Your Name. All Rights Reserved.</p>
+                <div class="social-links">
+                    <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Category filtering
+        const categoryTabs = document.querySelectorAll('.category-tab');
+        const contentCards = document.querySelectorAll('.content-card');
+        
+        categoryTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all tabs
+                categoryTabs.forEach(t => t.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                this.classList.add('active');
+                
+                const category = this.getAttribute('data-category');
+                
+                // Show/hide content cards based on category
+                contentCards.forEach(card => {
+                    if (category === 'all') {
+                        card.style.display = 'block';
+                    } else {
+                        const cardCategories = card.getAttribute('data-categories').split(',');
+                        if (cardCategories.includes(category)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+        
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    });
+    </script>
+</body>
+</html>

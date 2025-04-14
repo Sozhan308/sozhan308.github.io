@@ -1,0 +1,450 @@
+/* Streaming Service Theme - Prime Video Inspired */
+:root {
+    --primary-color: #00a8e1; /* Prime Video blue */
+    --secondary-color: #232f3e; /* Amazon dark blue */
+    --accent-color: #ff9900; /* Amazon orange */
+    --text-color: #111111;
+    --text-light: #555555;
+    --text-white: #ffffff;
+    --bg-dark: #0f171e; /* Prime Video dark background */
+    --bg-darker: #1a242f; /* Slightly lighter than bg-dark for cards */
+    --bg-light: #f8f9fa;
+    --card-hover: #1f2c3a; /* Slightly lighter for hover effects */
+    --border-color: #303a45;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    --transition: all 0.3s ease;
+}
+
+/* Global Streaming Theme Styles */
+body.streaming-theme {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Header Styling */
+body.streaming-theme header {
+    background-color: var(--secondary-color);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+body.streaming-theme .logo {
+    color: var(--text-white);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+body.streaming-theme .logo span {
+    color: var(--primary-color);
+}
+
+body.streaming-theme .nav-links a {
+    color: var(--text-white);
+    opacity: 0.8;
+}
+
+body.streaming-theme .nav-links a:hover,
+body.streaming-theme .nav-links a.active {
+    color: var(--primary-color);
+    opacity: 1;
+}
+
+/* Hero Section */
+body.streaming-theme .hero {
+    background-color: var(--bg-dark);
+    background-image: linear-gradient(to bottom, rgba(15, 23, 30, 0.7), rgba(15, 23, 30, 0.9)), url('../images/hero-bg.svg');
+    background-size: cover;
+    background-position: center;
+    padding: 150px 0 80px;
+    margin-bottom: 0;
+}
+
+body.streaming-theme .hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+body.streaming-theme .hero-content h1 .highlight {
+    color: var(--primary-color);
+}
+
+body.streaming-theme .hero-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 500;
+    color: var(--accent-color);
+}
+
+body.streaming-theme .cta-buttons {
+    margin-top: 30px;
+}
+
+body.streaming-theme .btn.primary-btn {
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+body.streaming-theme .btn.secondary-btn {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-white);
+    border: 1px solid var(--text-white);
+    padding: 12px 30px;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+body.streaming-theme .btn.primary-btn:hover {
+    background-color: #0090c0; /* Darker shade of primary */
+    transform: translateY(-2px);
+}
+
+body.streaming-theme .btn.secondary-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Section Styling */
+body.streaming-theme section {
+    padding: 80px 0;
+}
+
+body.streaming-theme .section-title {
+    font-size: 2.2rem;
+    color: var(--text-white);
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+}
+
+body.streaming-theme .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-color);
+}
+
+/* Content Cards - Prime Video Style */
+body.streaming-theme .content-row {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px 0 30px;
+    margin-bottom: 40px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) var(--bg-darker);
+}
+
+body.streaming-theme .content-row::-webkit-scrollbar {
+    height: 8px;
+}
+
+body.streaming-theme .content-row::-webkit-scrollbar-track {
+    background: var(--bg-darker);
+    border-radius: 10px;
+}
+
+body.streaming-theme .content-row::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+}
+
+body.streaming-theme .content-card {
+    flex: 0 0 300px;
+    background-color: var(--bg-darker);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    box-shadow: var(--shadow);
+}
+
+body.streaming-theme .content-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    background-color: var(--card-hover);
+    z-index: 1;
+}
+
+body.streaming-theme .content-image {
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+}
+
+body.streaming-theme .content-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+body.streaming-theme .content-card:hover .content-image img {
+    transform: scale(1.1);
+}
+
+body.streaming-theme .content-details {
+    padding: 15px;
+}
+
+body.streaming-theme .content-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-white);
+}
+
+body.streaming-theme .content-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 0.85rem;
+    color: #aaa;
+}
+
+body.streaming-theme .content-description {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+body.streaming-theme .content-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body.streaming-theme .watch-btn {
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: var(--transition);
+}
+
+body.streaming-theme .watch-btn:hover {
+    background-color: #0090c0;
+}
+
+body.streaming-theme .content-rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+/* Blog Specific Styles */
+body.streaming-theme .blog-hero {
+    background-color: var(--bg-dark);
+    background-image: linear-gradient(to bottom, rgba(15, 23, 30, 0.7), rgba(15, 23, 30, 0.9)), url('../images/hero-bg.svg');
+    background-size: cover;
+    background-position: center;
+    padding: 150px 0 80px;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+body.streaming-theme .blog-categories {
+    background-color: var(--secondary-color);
+    padding: 20px 0;
+    margin-bottom: 0;
+}
+
+body.streaming-theme .category-tab {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--text-white);
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+body.streaming-theme .category-tab:hover,
+body.streaming-theme .category-tab.active {
+    background-color: var(--primary-color);
+    color: var(--text-white);
+}
+
+body.streaming-theme .blog-posts {
+    background-color: var(--bg-dark);
+    padding-top: 60px;
+}
+
+body.streaming-theme .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+body.streaming-theme .post-card {
+    background-color: var(--bg-darker);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.streaming-theme .post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    background-color: var(--card-hover);
+}
+
+body.streaming-theme .post-content {
+    padding: 20px;
+}
+
+body.streaming-theme .post-title {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    line-height: 1.3;
+    color: var(--text-white);
+}
+
+body.streaming-theme .post-excerpt {
+    color: #ccc;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+body.streaming-theme .tag {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ddd;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+}
+
+body.streaming-theme .read-more {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+body.streaming-theme .platform-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white;
+}
+
+body.streaming-theme .platform-badge.hashnode {
+    background-color: #2962ff;
+}
+
+body.streaming-theme .platform-badge.medium {
+    background-color: #000000;
+}
+
+/* Footer Styling */
+body.streaming-theme footer {
+    background-color: var(--secondary-color);
+    color: var(--text-white);
+    padding: 40px 0;
+}
+
+body.streaming-theme .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body.streaming-theme .social-links a {
+    color: var(--text-white);
+    font-size: 1.5rem;
+    margin-left: 15px;
+    transition: var(--transition);
+}
+
+body.streaming-theme .social-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    body.streaming-theme .content-row {
+        padding-left: 15px;
+    }
+    
+    body.streaming-theme .content-card {
+        flex: 0 0 250px;
+    }
+    
+    body.streaming-theme .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    body.streaming-theme .hero-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    body.streaming-theme .posts-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+    
+    body.streaming-theme .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    body.streaming-theme .social-links a {
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    body.streaming-theme .content-card {
+        flex: 0 0 200px;
+    }
+    
+    body.streaming-theme .content-image {
+        height: 150px;
+    }
+    
+    body.streaming-theme .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    body.streaming-theme .hero-content h2 {
+        font-size: 1.2rem;
+    }
+    
+    body.streaming-theme .btn.primary-btn,
+    body.streaming-theme .btn.secondary-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}

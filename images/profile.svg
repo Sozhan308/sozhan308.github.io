@@ -1,0 +1,25 @@
+<svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="150" cy="150" r="150" fill="#0e76a8" />
+  
+  <!-- Person silhouette -->
+  <g fill="#ffffff">
+    <!-- Head -->
+    <circle cx="150" cy="120" r="50" />
+    
+    <!-- Body -->
+    <path d="M150,170 C117,170 90,190 75,220 C100,260 150,280 150,280 C150,280 200,260 225,220 C210,190 183,170 150,170 Z" />
+  </g>
+  
+  <!-- DevOps related icons in the background -->
+  <g fill="#ffffff" fill-opacity="0.1" transform="scale(0.5) translate(150, 150)">
+    <!-- Gear icon -->
+    <path d="M234.5,150 L265.5,150 L273,179.5 L248,198.5 L223,179.5 L234.5,150 Z M265.5,150 L273,120.5 L248,101.5 L223,120.5 L234.5,150 Z M234.5,150 L223,120.5 L198,101.5 L173,120.5 L173,150 Z M173,150 L173,179.5 L198,198.5 L223,179.5 L234.5,150 Z" stroke="#ffffff" stroke-width="2" stroke-opacity="0.3" />
+    
+    <!-- Code brackets -->
+    <path d="M100,100 L75,150 L100,200 M200,100 L225,150 L200,200" stroke="#ffffff" stroke-width="8" stroke-opacity="0.2" fill="none" />
+    
+    <!-- Infinity (CI/CD) -->
+    <path d="M150,250 C175,225 200,225 225,250 C250,275 275,275 300,250 M300,250 C275,275 250,275 225,250 C200,225 175,225 150,250" stroke="#ffffff" stroke-width="8" stroke-opacity="0.2" fill="none"/>
+  </g>
+</svg>

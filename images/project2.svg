@@ -1,0 +1,75 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="600" height="400" fill="#f0f5f9" />
+  
+  <!-- CI/CD Pipeline Visualization -->
+  <g transform="translate(50, 100)">
+    <!-- Pipeline stages -->
+    <g>
+      <!-- Source/Code stage -->
+      <rect x="0" y="0" width="80" height="80" rx="10" fill="#0e76a8" />
+      <text x="40" y="110" font-family="Arial" font-size="14" text-anchor="middle" fill="#333333">Source</text>
+      <g transform="translate(20, 20)">
+        <path d="M0,0 L40,0 L40,40 L0,40 Z M10,10 L30,10 M10,20 L30,20 M10,30 L30,30" stroke="#ffffff" stroke-width="2" fill="none" />
+      </g>
+      
+      <!-- Build stage -->
+      <rect x="130" y="0" width="80" height="80" rx="10" fill="#0e76a8" />
+      <text x="170" y="110" font-family="Arial" font-size="14" text-anchor="middle" fill="#333333">Build</text>
+      <g transform="translate(150, 20)">
+        <path d="M20,0 L40,20 L20,40 L0,20 Z" stroke="#ffffff" stroke-width="2" fill="none" />
+        <path d="M20,10 L20,30 M10,20 L30,20" stroke="#ffffff" stroke-width="2" />
+      </g>
+      
+      <!-- Test stage -->
+      <rect x="260" y="0" width="80" height="80" rx="10" fill="#0e76a8" />
+      <text x="300" y="110" font-family="Arial" font-size="14" text-anchor="middle" fill="#333333">Test</text>
+      <g transform="translate(280, 20)">
+        <circle cx="20" cy="20" r="20" stroke="#ffffff" stroke-width="2" fill="none" />
+        <path d="M10,20 L20,30 L35,10" stroke="#ffffff" stroke-width="2" fill="none" />
+      </g>
+      
+      <!-- Deploy stage -->
+      <rect x="390" y="0" width="80" height="80" rx="10" fill="#0e76a8" />
+      <text x="430" y="110" font-family="Arial" font-size="14" text-anchor="middle" fill="#333333">Deploy</text>
+      <g transform="translate(410, 20)">
+        <path d="M20,0 L40,20 L20,40 L0,20 Z" stroke="#ffffff" stroke-width="2" fill="none" />
+        <path d="M10,20 L30,20 M20,10 L20,30" stroke="#ffffff" stroke-width="2" />
+      </g>
+      
+      <!-- Connecting arrows -->
+      <path d="M80,40 L130,40" stroke="#333333" stroke-width="2" marker-end="url(#arrowhead)" />
+      <path d="M210,40 L260,40" stroke="#333333" stroke-width="2" marker-end="url(#arrowhead)" />
+      <path d="M340,40 L390,40" stroke="#333333" stroke-width="2" marker-end="url(#arrowhead)" />
+    </g>
+    
+    <!-- Microservices architecture below -->
+    <g transform="translate(50, 150)">
+      <!-- Service 1 -->
+      <rect x="0" y="0" width="60" height="60" rx="5" fill="#2ea44f" />
+      <text x="30" y="80" font-family="Arial" font-size="12" text-anchor="middle" fill="#333333">Service 1</text>
+      
+      <!-- Service 2 -->
+      <rect x="120" y="0" width="60" height="60" rx="5" fill="#2ea44f" />
+      <text x="150" y="80" font-family="Arial" font-size="12" text-anchor="middle" fill="#333333">Service 2</text>
+      
+      <!-- Service 3 -->
+      <rect x="240" y="0" width="60" height="60" rx="5" fill="#2ea44f" />
+      <text x="270" y="80" font-family="Arial" font-size="12" text-anchor="middle" fill="#333333">Service 3</text>
+      
+      <!-- Service 4 -->
+      <rect x="360" y="0" width="60" height="60" rx="5" fill="#2ea44f" />
+      <text x="390" y="80" font-family="Arial" font-size="12" text-anchor="middle" fill="#333333">Service 4</text>
+    </g>
+  </g>
+  
+  <!-- Arrowhead marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333333" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="300" y="350" font-family="Arial" font-size="24" text-anchor="middle" fill="#333333">CI/CD Pipeline for Microservices</text>
+</svg>
