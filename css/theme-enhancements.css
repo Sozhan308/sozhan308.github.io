@@ -1,0 +1,157 @@
+/* Theme Enhancements - Modern UI Improvements */
+
+/* Enhanced Animations */
+@keyframes floatBackground {
+    0% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-10px) translateX(5px); }
+    100% { transform: translateY(0) translateX(0); }
+}
+
+@keyframes shimmer {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
+}
+
+/* Enhanced Hero Section */
+body.streaming-theme .hero {
+    position: relative;
+    overflow: hidden;
+}
+
+body.streaming-theme .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 168, 225, 0.1) 0%, transparent 50%);
+    animation: floatBackground 15s ease-in-out infinite;
+}
+
+body.streaming-theme .hero-content h1 {
+    background: linear-gradient(120deg, var(--text-white), var(--primary-color-bright));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    position: relative;
+}
+
+/* Enhanced Card Interactions */
+body.streaming-theme .content-card {
+    transform-origin: center bottom;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+                box-shadow 0.3s ease,
+                background-color 0.3s ease;
+}
+
+body.streaming-theme .content-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+}
+
+body.streaming-theme .content-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-color-bright));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+body.streaming-theme .content-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* Enhanced Button Effects */
+body.streaming-theme .btn.primary-btn {
+    background: linear-gradient(45deg, var(--primary-color), var(--primary-color-bright));
+    box-shadow: 0 4px 15px rgba(0, 168, 225, 0.3);
+}
+
+body.streaming-theme .btn.primary-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 6px 20px rgba(0, 168, 225, 0.4);
+}
+
+body.streaming-theme .btn.primary-btn::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--primary-color), var(--primary-color-bright));
+    z-index: -1;
+    border-radius: 6px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+body.streaming-theme .btn.primary-btn:hover::after {
+    opacity: 0.4;
+}
+
+/* Enhanced Navigation Effects */
+body.streaming-theme .nav-links a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-color-bright));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+body.streaming-theme .nav-links a:hover::before {
+    transform: scaleX(1);
+}
+
+/* Enhanced Section Transitions */
+body.streaming-theme section {
+    position: relative;
+    transition: transform 0.5s ease-out;
+}
+
+body.streaming-theme section:hover {
+    transform: translateZ(0);
+}
+
+/* Enhanced Loading States */
+.loading-shimmer {
+    background: linear-gradient(90deg, 
+        var(--bg-darker) 0%, 
+        var(--bg-dark) 50%, 
+        var(--bg-darker) 100%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite linear;
+}
+
+/* Enhanced Scroll Behavior */
+body.streaming-theme {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+/* Enhanced Focus States */
+body.streaming-theme *:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 168, 225, 0.3);
+    transition: box-shadow 0.3s ease;
+}
+
+/* Enhanced Mobile Interactions */
+@media (max-width: 768px) {
+    body.streaming-theme .content-card:hover {
+        transform: translateY(-4px) scale(1.01);
+    }
+    
+    body.streaming-theme .btn.primary-btn:hover {
+        transform: translateY(-1px) scale(1.01);
+    }
+}

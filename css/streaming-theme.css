@@ -1,6 +1,8 @@
 /* Streaming Service Theme - Prime Video Inspired */
 :root {
     --primary-color: #00A8E1; /* Prime Video blue */
+    --primary-color-bright: #00C3FF; /* Brighter blue for highlights */
+    --primary-color-dark: #0076A8; /* Darker blue for hover states */
     --secondary-color: #0F171E; /* Prime Video dark background */
     --accent-color: #00A8E1; /* Prime Video blue accent */
     --text-color: #111111;
@@ -12,6 +14,8 @@
     --card-hover: #252E39; /* Slightly lighter for hover effects */
     --border-color: #1A242F;
     --shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    --shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.5);
+    --glow: 0 0 15px rgba(0, 168, 225, 0.5);
     --transition: all 0.3s ease;
 }
 
@@ -20,6 +24,30 @@ body.streaming-theme {
     background-color: var(--bg-dark);
     color: var(--text-white);
     font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(0, 168, 225, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(0, 168, 225, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 168, 225, 0); }
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 5px rgba(0, 168, 225, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(0, 168, 225, 0.8); }
+    100% { box-shadow: 0 0 5px rgba(0, 168, 225, 0.5); }
 }
 
 /* Header Styling */
@@ -39,21 +67,42 @@ body.streaming-theme .logo {
     color: var(--text-white);
     font-size: 1.8rem;
     font-weight: 700;
+    position: relative;
+    animation: fadeIn 1s ease-out;
 }
 
 body.streaming-theme .logo span {
-    color: var(--primary-color);
+    color: var(--primary-color-bright);
+    text-shadow: 0 0 10px rgba(0, 168, 225, 0.3);
 }
 
 body.streaming-theme .nav-links a {
     color: var(--text-white);
     opacity: 0.8;
+    position: relative;
+    transition: var(--transition);
+}
+
+body.streaming-theme .nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
 }
 
 body.streaming-theme .nav-links a:hover,
 body.streaming-theme .nav-links a.active {
-    color: var(--primary-color);
+    color: var(--primary-color-bright);
     opacity: 1;
+}
+
+body.streaming-theme .nav-links a:hover::after,
+body.streaming-theme .nav-links a.active::after {
+    width: 100%;
 }
 
 /* Hero Section */
@@ -73,10 +122,13 @@ body.streaming-theme .hero-content h1 {
     font-size: 3.5rem;
     margin-bottom: 20px;
     font-weight: 700;
+    animation: fadeIn 1.2s ease-out, slideUp 1.2s ease-out;
 }
 
 body.streaming-theme .hero-content h1 .highlight {
-    color: var(--primary-color);
+    color: var(--primary-color-bright);
+    position: relative;
+    text-shadow: 0 0 10px rgba(0, 168, 225, 0.3);
 }
 
 body.streaming-theme .hero-content h2 {
@@ -88,6 +140,7 @@ body.streaming-theme .hero-content h2 {
 
 body.streaming-theme .cta-buttons {
     margin-top: 30px;
+    animation: fadeIn 1.6s ease-out, slideUp 1.6s ease-out;
 }
 
 body.streaming-theme .btn.primary-btn {
@@ -100,6 +153,21 @@ body.streaming-theme .btn.primary-btn {
     transition: var(--transition);
     letter-spacing: 0.5px;
     text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+body.streaming-theme .btn.primary-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.7s ease;
+    z-index: -1;
 }
 
 body.streaming-theme .btn.secondary-btn {
@@ -113,13 +181,20 @@ body.streaming-theme .btn.secondary-btn {
 }
 
 body.streaming-theme .btn.primary-btn:hover {
-    background-color: #0076A8; /* Darker shade of Prime Video blue */
+    background-color: var(--primary-color-dark);
     transform: translateY(-2px);
+    box-shadow: var(--glow);
+}
+
+body.streaming-theme .btn.primary-btn:hover::before {
+    left: 100%;
 }
 
 body.streaming-theme .btn.secondary-btn:hover {
     background-color: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
+    border-color: var(--primary-color-bright);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 /* Section Styling */
@@ -130,11 +205,23 @@ body.streaming-theme section {
 body.streaming-theme .section-title {
     font-size: 1.8rem;
     color: var(--text-white);
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     position: relative;
     display: inline-block;
     font-weight: 600;
     letter-spacing: 0.5px;
+    padding-bottom: 10px;
+}
+
+body.streaming-theme .section-title::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 2px;
 }
 
 body.streaming-theme .section-title::after {
@@ -143,11 +230,10 @@ body.streaming-theme .section-title::after {
 
 /* Content Cards - Netflix Style */
 body.streaming-theme .content-row {
-    display: flex;
-    overflow-x: auto;
-    gap: 10px;
-    padding: 20px 0 30px;
-    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin: 30px 0 40px;
     scrollbar-width: thin;
     scrollbar-color: var(--primary-color) var(--bg-darker);
     position: relative;
@@ -168,28 +254,44 @@ body.streaming-theme .content-row::-webkit-scrollbar-thumb {
 }
 
 body.streaming-theme .content-card {
-    flex: 0 0 250px;
     background-color: var(--bg-darker);
-    border-radius: 4px;
+    border-radius: 8px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     box-shadow: var(--shadow);
     margin-bottom: 10px;
 }
 
 body.streaming-theme .content-card:hover {
-    transform: scale(1.1);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
     background-color: var(--card-hover);
     z-index: 10;
     cursor: pointer;
+    border-top: 2px solid var(--primary-color);
 }
 
 body.streaming-theme .content-image {
-    height: 150px;
+    height: 180px;
     overflow: hidden;
     position: relative;
+}
+
+body.streaming-theme .content-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
 }
 
 body.streaming-theme .content-image img {
@@ -201,15 +303,19 @@ body.streaming-theme .content-image img {
 
 body.streaming-theme .content-card:hover .content-image img {
     transform: scale(1.1);
+    filter: brightness(1.1);
 }
 
 body.streaming-theme .content-details {
-    padding: 12px;
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 body.streaming-theme .content-title {
-    font-size: 1.1rem;
-    margin-bottom: 8px;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
     color: var(--text-white);
     font-weight: 500;
     white-space: nowrap;
@@ -219,9 +325,9 @@ body.streaming-theme .content-title {
 
 body.streaming-theme .content-meta {
     display: flex;
-    gap: 12px;
-    margin-bottom: 8px;
-    font-size: 0.8rem;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-size: 0.85rem;
     color: var(--text-light);
 }
 
@@ -232,10 +338,10 @@ body.streaming-theme .content-meta span {
 }
 
 body.streaming-theme .content-description {
-    font-size: 0.85rem;
-    color: var(--text-light);
-    margin-bottom: 12px;
-    line-height: 1.4;
+    font-size: 0.95rem;
+    color: #c5d2db;
+    margin-bottom: 20px;
+    line-height: 1.5;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -243,8 +349,10 @@ body.streaming-theme .content-description {
 }
 
 body.streaming-theme .content-action {
+    margin-top: auto;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     align-items: center;
 }
 
@@ -260,10 +368,22 @@ body.streaming-theme .watch-btn {
     align-items: center;
     gap: 5px;
     transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+body.streaming-theme .watch-btn i {
+    transition: transform 0.3s ease;
 }
 
 body.streaming-theme .watch-btn:hover {
-    background-color: #0076A8;
+    background-color: var(--primary-color-dark);
+    box-shadow: 0 0 10px rgba(0, 168, 225, 0.4);
+}
+
+body.streaming-theme .watch-btn:hover i {
+    transform: translateX(3px);
 }
 
 body.streaming-theme .content-rating {
@@ -407,10 +527,140 @@ body.streaming-theme .social-links a {
 }
 
 body.streaming-theme .social-links a:hover {
-    color: var(--primary-color);
+    color: var(--primary-color-bright);
+    transform: translateY(-3px);
+    animation: pulse 1.5s infinite;
 }
 
 /* Responsive Styles */
+/* About Section */
+body.streaming-theme .about {
+    background-color: var(--bg-darker);
+    position: relative;
+    overflow: hidden;
+}
+
+body.streaming-theme .about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 168, 225, 0.05) 0%, transparent 50%);
+    z-index: 0;
+}
+
+body.streaming-theme .about-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    align-items: center;
+}
+
+body.streaming-theme .about-image {
+    background: var(--bg-darker) !important;
+    padding: 15px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2) !important;
+    transition: transform 0.3s ease;
+}
+
+body.streaming-theme .about-image:hover {
+    transform: translateY(-5px);
+}
+
+body.streaming-theme .about-image img {
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+body.streaming-theme .about-image:hover img {
+    transform: scale(1.03);
+}
+
+body.streaming-theme .about-text p {
+    color: #c5d2db;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+body.streaming-theme .about-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+body.streaming-theme .detail-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+body.streaming-theme .detail-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+body.streaming-theme .detail-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: var(--text-white);
+}
+
+body.streaming-theme .detail-item p {
+    color: var(--text-light);
+    margin-bottom: 0;
+}
+
+/* Hero section improvements */
+body.streaming-theme .hero {
+    background-image: linear-gradient(to bottom, rgba(15, 23, 30, 0.8), rgba(15, 23, 30, 0.9)), url('../images/hero-bg.svg');
+    background-size: cover;
+    background-position: center;
+    padding: 180px 0 100px;
+    margin-bottom: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+body.streaming-theme .hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                    radial-gradient(circle, rgba(255, 255, 255, 0.05) 2px, transparent 2px);
+    background-size: 30px 30px, 80px 80px;
+    background-position: 0 0, 40px 40px;
+    animation: float 15s infinite linear;
+    z-index: 1;
+    pointer-events: none;
+}
+
+@keyframes float {
+    0% { background-position: 0 0, 40px 40px; }
+    100% { background-position: 40px 40px, 80px 80px; }
+}
+
+body.streaming-theme .hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+body.streaming-theme .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+body.streaming-theme .hero-content .highlight {
+    color: var(--primary-color);
+}
+
 @media (max-width: 768px) {
     body.streaming-theme .content-row {
         padding-left: 15px;

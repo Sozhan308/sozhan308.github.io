@@ -14,22 +14,43 @@ document.addEventListener('DOMContentLoaded', function() {
     const navItems = document.querySelectorAll('.nav-links a');
     navItems.forEach(item => {
         item.addEventListener('click', function() {
-            if (hamburger.classList.contains('active')) {
+            if (hamburger && hamburger.classList.contains('active')) {
                 hamburger.classList.remove('active');
                 navLinks.classList.remove('active');
             }
         });
     });
     
-    // Header scroll effect
+    // Enhanced header scroll effect with animation
     const header = document.querySelector('header');
     window.addEventListener('scroll', function() {
         if (window.scrollY > 100) {
             header.classList.add('scrolled');
+            header.style.background = 'rgba(15, 23, 30, 0.95)';
+            header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
         } else {
             header.classList.remove('scrolled');
+            header.style.background = '';
+            header.style.boxShadow = '';
         }
     });
+    
+    // Add scroll reveal animations
+    const revealElements = document.querySelectorAll('.year-section, .experience-item, .section-title');
+    
+    const scrollReveal = function() {
+        revealElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+            
+            if (elementTop < window.innerHeight - elementVisible) {
+                element.classList.add('fade-in');
+            }
+        });
+    };
+    
+    window.addEventListener('scroll', scrollReveal);
+    scrollReveal(); // Initial check on page load
     
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

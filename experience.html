@@ -6,6 +6,7 @@
     <title>Professional Experience - Streaming Edition</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/streaming-theme.css">
+    <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -13,6 +14,22 @@
         .experience-timeline {
             padding: 50px 0;
             background-color: var(--bg-dark);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Add dynamic background pattern */
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle, rgba(0, 168, 225, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+            z-index: 0;
+            animation: fadeIn 2s ease-in-out forwards;
         }
         
         .timeline-container {
@@ -42,6 +59,34 @@
         .year-header h3 {
             margin: 0;
             font-size: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .year-header h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+        
+        .year-header:hover h3::after {
+            width: 100%;
+        }
+        
+        .year-header .badge {
+            background-color: var(--accent-color);
+            color: var(--text-white);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            animation: pulse 2s infinite;
+            display: inline-block;
+            box-shadow: 0 0 10px rgba(0, 168, 225, 0.5);
         }
         
         .year-content {
@@ -53,6 +98,17 @@
             margin-bottom: 20px;
             padding-bottom: 20px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 2;
+            padding-left: 10px;
+        }
+        
+        /* Add a subtle highlight effect on hover */
+        .experience-item:hover {
+            background: linear-gradient(90deg, rgba(0, 168, 225, 0.1), transparent);
+            border-radius: 4px;
+            padding-left: 15px;
         }
         
         .experience-item:last-child {
@@ -65,6 +121,23 @@
             color: var(--accent-color);
             margin-bottom: 5px;
             font-size: 1.2rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .experience-item h4::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+        
+        .experience-item:hover h4::before {
+            width: 100%;
         }
         
         .experience-item .company {
@@ -88,6 +161,32 @@
         
         .experience-item ul li {
             margin-bottom: 5px;
+            position: relative;
+            padding-left: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .experience-item ul li:hover {
+            transform: translateX(5px);
+            color: var(--accent-color);
+        }
+        
+        .experience-item ul li::before {
+            content: '';
+            position: absolute;
+            left: -15px;
+            top: 10px;
+            width: 6px;
+            height: 6px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        
+        .experience-item ul li:hover::before {
+            opacity: 1;
+            transform: scale(1.2);
         }
         
         .experience-hero {
@@ -98,6 +197,25 @@
             padding: 150px 0 80px;
             text-align: center;
             margin-bottom: 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Add floating particles effect */
+        .experience-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                            radial-gradient(circle, rgba(255, 255, 255, 0.1) 2px, transparent 2px);
+            background-size: 30px 30px, 80px 80px;
+            background-position: 0 0, 40px 40px;
+            animation: float 15s infinite linear;
+            z-index: 1;
+            pointer-events: none;
         }
         
         .experience-hero-content h1 {
@@ -118,8 +236,8 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo">DevOps<span>Portfolio</span></div>
-                <ul class="nav-links">
+                <div class="logo float">DevOps<span>Portfolio</span></div>
+                <ul class="nav-links stagger-fade-in">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="experience.html" class="active">Experience</a></li>
                     <li><a href="skills.html">Skills</a></li>
@@ -136,131 +254,64 @@
         </div>
     </header>
 
-    <section class="experience-hero">
+    <section class="experience-hero particles-bg animated-bg">
         <div class="container">
-            <div class="experience-hero-content">
+            <div class="experience-hero-content fade-in">
                 <h1>Professional Experience</h1>
-                <p>My journey as a DevOps Engineer from 2021 to present</p>
+                <p>My professional journey from 2018 to present</p>
             </div>
         </div>
     </section>
 
     <section class="experience-timeline">
         <div class="container">
-            <h2 class="section-title">My Career Timeline</h2>
+            <h2 class="section-title fade-in">My Career Timeline</h2>
             
-            <div class="timeline-container">
-                <!-- 2025 (Future) -->
-                <div class="year-section">
+            <div class="timeline-container stagger-fade-in">
+                <!-- 2021-Present -->
+                <div class="year-section shine-effect">
                     <div class="year-header">
-                        <h3>2025</h3>
-                        <span class="badge">Future Goals</span>
-                    </div>
-                    <div class="year-content">
-                        <div class="experience-item">
-                            <h4>Senior DevOps Architect</h4>
-                            <span class="company">Target Position</span>
-                            <div class="duration">
-                                <i class="fas fa-calendar"></i> Career Goal
-                            </div>
-                            <ul>
-                                <li>Lead enterprise-wide DevOps transformation initiatives</li>
-                                <li>Design and implement multi-cloud strategies</li>
-                                <li>Mentor junior DevOps engineers and build high-performing teams</li>
-                                <li>Contribute to open-source DevOps tools and frameworks</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 2024 -->
-                <div class="year-section">
-                    <div class="year-header">
-                        <h3>2024</h3>
+                        <h3>2021-Present</h3>
                         <span class="badge">Current</span>
                     </div>
                     <div class="year-content">
                         <div class="experience-item">
-                            <h4>Lead DevOps Engineer</h4>
-                            <span class="company">Tech Innovations Inc.</span>
-                            <div class="duration">
-                                <i class="fas fa-calendar"></i> Jan 2024 - Present
-                            </div>
-                            <ul>
-                                <li>Leading a team of 5 DevOps engineers to implement CI/CD pipelines across multiple projects</li>
-                                <li>Architecting and maintaining Kubernetes clusters for production workloads</li>
-                                <li>Implementing GitOps workflows with ArgoCD for automated deployments</li>
-                                <li>Designing and implementing disaster recovery strategies for critical systems</li>
-                                <li>Optimizing cloud infrastructure costs while maintaining performance and reliability</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 2023 -->
-                <div class="year-section">
-                    <div class="year-header">
-                        <h3>2023</h3>
-                    </div>
-                    <div class="year-content">
-                        <div class="experience-item">
-                            <h4>Senior DevOps Engineer</h4>
-                            <span class="company">Cloud Solutions Ltd.</span>
-                            <div class="duration">
-                                <i class="fas fa-calendar"></i> Mar 2023 - Dec 2023
-                            </div>
-                            <ul>
-                                <li>Migrated legacy applications to containerized microservices architecture</li>
-                                <li>Implemented infrastructure as code using Terraform for AWS and Azure resources</li>
-                                <li>Set up comprehensive monitoring and alerting systems using Prometheus and Grafana</li>
-                                <li>Automated security scanning and compliance checks in CI/CD pipelines</li>
-                                <li>Reduced deployment time by 70% through pipeline optimization</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 2022 -->
-                <div class="year-section">
-                    <div class="year-header">
-                        <h3>2022</h3>
-                    </div>
-                    <div class="year-content">
-                        <div class="experience-item">
                             <h4>DevOps Engineer</h4>
-                            <span class="company">Digital Systems Corp</span>
+                            <span class="company">Bosch Global Software Technologies</span>
                             <div class="duration">
-                                <i class="fas fa-calendar"></i> Feb 2022 - Feb 2023
+                                <i class="fas fa-calendar"></i> Oct 2021 - Present
                             </div>
-                            <ul>
-                                <li>Designed and implemented CI/CD pipelines using Jenkins and GitHub Actions</li>
-                                <li>Managed Docker container orchestration with Kubernetes</li>
-                                <li>Automated infrastructure provisioning with Terraform and Ansible</li>
-                                <li>Implemented logging solutions using ELK stack</li>
-                                <li>Collaborated with development teams to improve deployment processes</li>
+                            <ul class="stagger-fade-in">
+                                <li>Designing and implementing CI/CD pipelines using Jenkins and GitHub Actions</li>
+                                <li>Managing Docker container orchestration with Kubernetes for microservices architecture</li>
+                                <li>Automating infrastructure provisioning with Terraform and Ansible</li>
+                                <li>Implementing monitoring solutions using Prometheus and Grafana</li>
+                                <li>Optimizing cloud infrastructure costs while maintaining performance and reliability</li>
+                                <li>Collaborating with development teams to improve deployment processes</li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 
-                <!-- 2021 -->
-                <div class="year-section">
+                <!-- 2018-2021 -->
+                <div class="year-section shine-effect">
                     <div class="year-header">
-                        <h3>2021</h3>
+                        <h3>2018-2021</h3>
                     </div>
                     <div class="year-content">
                         <div class="experience-item">
-                            <h4>Junior DevOps Engineer</h4>
-                            <span class="company">Tech Startups Inc.</span>
+                            <h4>Software Engineer</h4>
+                            <span class="company">Tata Consultancy Services</span>
                             <div class="duration">
-                                <i class="fas fa-calendar"></i> Jan 2021 - Jan 2022
+                                <i class="fas fa-calendar"></i> Jun 2018 - Oct 2021
                             </div>
-                            <ul>
-                                <li>Assisted in setting up and maintaining CI/CD pipelines</li>
-                                <li>Learned and implemented containerization using Docker</li>
-                                <li>Contributed to infrastructure automation scripts</li>
-                                <li>Participated in on-call rotations for production support</li>
-                                <li>Collaborated with development teams to streamline deployment processes</li>
+                            <ul class="stagger-fade-in">
+                                <li>Developed and maintained enterprise applications using Java and Spring framework</li>
+                                <li>Implemented automated testing frameworks to improve code quality</li>
+                                <li>Collaborated with cross-functional teams to deliver client solutions</li>
+                                <li>Participated in Agile development processes and sprint planning</li>
+                                <li>Assisted in database design and optimization using SQL</li>
+                                <li>Contributed to continuous integration practices and build automation</li>
                             </ul>
                         </div>
                     </div>
@@ -292,6 +343,25 @@
         hamburger.addEventListener('click', function() {
             this.classList.toggle('active');
             navLinks.classList.toggle('active');
+        });
+        
+        // Add fade-in class to elements as they appear in viewport
+        const observerOptions = {
+            threshold: 0.25
+        };
+        
+        const observer = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        // Observe experience items
+        document.querySelectorAll('.experience-item').forEach(item => {
+            observer.observe(item);
         });
     });
     </script>
