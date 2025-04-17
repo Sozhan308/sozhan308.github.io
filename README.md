@@ -1,6 +1,6 @@
 # My Portfolio
 
-This is a modern portfolio website inspired by streaming services like Prime Video, designed for DevOps engineers and cloud professionals
+This is a modern portfolio website (theme inspired from streaming services like Prime Video, designed for DevOps engineers and cloud professionals)
 
 ## Original Inspiration
 
