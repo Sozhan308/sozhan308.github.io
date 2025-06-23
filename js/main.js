@@ -20,6 +20,25 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Theme toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            document.body.classList.remove('streaming-theme');
+        } else {
+            document.body.classList.add('streaming-theme');
+        }
+        themeToggle.innerHTML = document.body.classList.contains('streaming-theme') ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+
+        themeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('streaming-theme');
+            const isDark = document.body.classList.contains('streaming-theme');
+            this.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+    }
     
     // Enhanced header scroll effect with animation
     const header = document.querySelector('header');

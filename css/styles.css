@@ -198,6 +198,26 @@ nav {
     transition: var(--transition);
 }
 
+/* Theme Toggle Button */
+.theme-toggle {
+    background: none;
+    border: none;
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.theme-toggle i {
+    pointer-events: none;
+}
+
+body.streaming-theme .theme-toggle,
+header.scrolled .theme-toggle {
+    color: var(--text-white);
+}
+
 /* Hero Section */
 .hero {
     height: 100vh;
@@ -586,6 +606,11 @@ footer {
     
     .hamburger {
         display: block;
+    }
+
+    .theme-toggle {
+        margin-left: 15px;
+        font-size: 1.5rem;
     }
     
     .hamburger.active span:nth-child(1) {
