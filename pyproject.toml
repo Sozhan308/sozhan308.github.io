@@ -1,0 +1,18 @@
+[project]
+name = "sozhan308-github-io"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "itables>=2.8.0",
+    "jupyter-cache>=1.0.1",
+    "lorem-text>=3.0",
+    "notebook>=7.5.6",
+    "palmerpenguins>=0.1.6",
+    "pandas>=3.0.3",
+    "plotnine>=0.15.4",
+    "scikit-learn>=1.8.0",
+    "scikit-misc>=0.5.2",
+    "tabulate>=0.10.0",
+]

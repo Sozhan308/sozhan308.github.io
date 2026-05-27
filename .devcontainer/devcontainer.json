@@ -1,28 +1,44 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
-  "hostRequirements": {
-    "memory": "8gb"
-  },
-  "waitFor": "onCreateCommand",
-  "updateContentCommand": "yarn",
-  "postCreateCommand": "",
-  "postAttachCommand": "yarn dev",
   "customizations": {
     "codespaces": {
-      "openFiles": ["data/blog/code-sample.mdx"]
+      "openFiles": [
+        "README.md"
+      ]
     },
     "vscode": {
+      // Set *default* container specific settings.json values on container create.
       "settings": {
-        "editor.formatOnSave": true
+        "terminal.integrated.shell.linux": "/bin/bash"
       },
-      "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"]
+      // Add the IDs of extensions you want installed when the container is created.
+      "extensions": [
+        "GitHub.github-vscode-theme",
+        "ms-toolsai.jupyter",
+        "ms-python.python",
+        "quarto.quarto"
+        // Additional Extensions Here
+      ]
     }
   },
-  "portsAttributes": {
-    "3000": {
-      "label": "Nextjs server",
-      "onAutoForward": "openPreview"
+  "features": {
+    // Quarto configuration: https://github.com/rocker-org/devcontainer-features/blob/main/src/quarto-cli/README.md
+    // This feature will install Quarto and optionally TinyTeX within your container.
+    "ghcr.io/rocker-org/devcontainer-features/quarto-cli:1": {
+      "installTinyTex": true
     }
   },
-  "forwardPorts": [3000]
+  // Use our custom Dockerfile to build the image.
+  // This will ensure requirements.txt is processed during the image build.
+  "dockerfile": "Dockerfile",
+  // Commands that run after the container is created, but before you attach to it.
+  // This is good for installing tools that are not project dependencies (like jupyter)
+  // or for setting up configurations that are specific to the container's runtime.
+  "postCreateCommand": "python3 -m pip install jupyter",
+  // Commands that run when the container is created, before any postCreateCommand.
+  // Here, we're just updating the terminal prompt for a cleaner look.
+  "onCreateCommand": "echo PS1='\"$ \"' >> ~/.bashrc",
+  // Commands that run every time you attach to the container.
+  // This ensures your local branches are up-to-date with the remote.
+  "postAttachCommand": "git pull --all"
+  // DevContainer Reference: https://code.visualstudio.com/docs/remote/devcontainerjson-reference
 }

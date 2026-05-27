@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>My personal blog</title>
+<link>https://your-website-url.example.com/</link>
+<atom:link href="https://your-website-url.example.com/index.xml" rel="self" type="application/rss+xml"/>
+<description>A blog built with Quarto</description>
+<generator>quarto-1.9.38</generator>
+<lastBuildDate>Tue, 26 May 2026 18:30:00 GMT</lastBuildDate>
+<item>
+  <title>My first real blog</title>
+  <link>https://your-website-url.example.com/posts/2026-05-27_my_first_blog/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>the palmerpenguins dataset is <strong>always</strong> useful</p>
+<div id="679ced37" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> palmerpenguins <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> load_penguins</span>
+<span id="cb1-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> pd</span>
+<span id="cb1-3"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> np</span>
+<span id="cb1-4"></span>
+<span id="cb1-5">penguins_df <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> load_penguins()</span>
+<span id="cb1-6">penguins_cleaned_df <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> penguins_df.dropna()</span>
+<span id="cb1-7"></span>
+<span id="cb1-8">species_counts <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> penguins_cleaned_df[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'species'</span>].value_counts()</span></code></pre></div></div>
+</div>
+<section id="showing-matplotlib-charts" class="level1">
+<h1>Showing Matplotlib Charts</h1>
+<p>We can display matplotlib charts directly:</p>
+<div id="c03dcdd6" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> matplotlib.pyplot <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> plt</span>
+<span id="cb2-2"></span>
+<span id="cb2-3">plot <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> plt.figure()</span>
+<span id="cb2-4">plot.set_figwidth(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>)</span>
+<span id="cb2-5">plot.set_figheight(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)</span>
+<span id="cb2-6"></span>
+<span id="cb2-7">plt.bar(species_counts.index, species_counts.values)</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://your-website-url.example.com/posts/2026-05-27_my_first_blog/index_files/figure-html/cell-3-output-1.png" width="500" height="263" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="dd0a2e6a" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1">plot.savefig(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"matplotlib_bar.png"</span>)</span></code></pre></div></div>
+</div>
+
+
+</section>
+
+ ]]></description>
+  <guid>https://your-website-url.example.com/posts/2026-05-27_my_first_blog/</guid>
+  <pubDate>Tue, 26 May 2026 18:30:00 GMT</pubDate>
+  <media:content url="https://your-website-url.example.com/posts/2026-05-27_my_first_blog/matplotlib_bar.png" medium="image" type="image/png" height="72" width="144"/>
+</item>
+</channel>
+</rss>

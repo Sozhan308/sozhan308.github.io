@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "My personal blog",
+    "section": "",
+    "text": "My first real blog\n\n\n\n\n\n\n\n\nMay 27, 2026\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/2026-05-27_my_first_blog/index.html",
+    "href": "posts/2026-05-27_my_first_blog/index.html",
+    "title": "My first real blog",
+    "section": "",
+    "text": "the palmerpenguins dataset is always useful\n\nfrom palmerpenguins import load_penguins\nimport pandas as pd\nimport numpy as np\n\npenguins_df = load_penguins()\npenguins_cleaned_df = penguins_df.dropna()\n\nspecies_counts = penguins_cleaned_df['species'].value_counts()\n\n\nShowing Matplotlib Charts\nWe can display matplotlib charts directly:\n\nimport matplotlib.pyplot as plt\n\nplot = plt.figure()\nplot.set_figwidth(6)\nplot.set_figheight(3)\n\nplt.bar(species_counts.index, species_counts.values)\n\n\n\n\n\n\n\n\n\nplot.savefig(\"matplotlib_bar.png\")"
+  }
+]

@@ -200,3 +200,6 @@ Procfile          text
 
 # Ignore files (like .npmignore or .gitignore)
 *.*ignore         text
+
+# Auto detect text files and perform LF normalization
+* text=auto
